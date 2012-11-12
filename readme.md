@@ -109,7 +109,7 @@ function doGet() {
   });
   return bot.getApp();
 }
-function b() {
+UiBot.b = function() {
   Browser.msgBox('callback!');
 }
 ```
@@ -387,7 +387,7 @@ function doGet() {
 ```
 
 ### Handle clicks on the server
-UiBot also makes it simple to add server side click handlers to buttons and other widgets. An _onClick_ property can accept an object with the name of a _callback_ function and an optional element id to be passed to this  function (the _cbElementId_ property).
+UiBot also makes it simple to add server side click handlers to buttons and other widgets. An _onClick_ property can accept an object with the name of a _callback_ function and an optional element id to be passed to this  function (the _cbElementId_ property). Note that Google Apps Script scopes the callback to the libary where it was created, so for now your server callback must be placed in the UiBot namespace (see the example below).
 
 
 ```javascript
@@ -426,7 +426,7 @@ function doGet() {
 
 }
 
-function submitHandler(e) {
+UiBot.submitHandler = function(e) {
   Browser.msgBox(e.parameter.period);
 }
 ```
