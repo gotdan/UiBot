@@ -97,7 +97,7 @@ function doGet() {
       text   : 'Submit',
       onClick: {
         callback  : 'b',
-        cbElement : 'form',
+        cbElementId : 'form',
         hide      : 'form'
       }
     }] //panel items
